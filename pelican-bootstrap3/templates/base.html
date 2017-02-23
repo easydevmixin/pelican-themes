@@ -210,6 +210,14 @@
 {% include 'includes/ga.html' %}
 {% include 'includes/piwik.html' %}
 
+<script>
+    $(document.links).filter(function() {
+        return this.hostname != window.location.hostname;
+    })
+        .attr('target', '_blank')
+        .attr('rel', 'nofollow');
+</script>
+
 {% block scripts %}{% endblock %}
 </body>
 </html>
